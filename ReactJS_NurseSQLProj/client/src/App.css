@@ -1,0 +1,41 @@
+.App {
+  text-align: left;
+  padding:40px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h4 {
+  padding: 5px;
+}
+
+.AddBox {
+  padding: 5px;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  padding-right: 20px;
+  padding-bottom: 10px;
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: #00000022;
+}
+
+td {
+  padding-right:20px;
+  padding-bottom: 10px;
+}
+
+
+#mainContainer
+{
+    background-color: white;
+    height: 20%;
+    width: 20%;
+}
