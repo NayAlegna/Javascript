@@ -1,1 +1,1 @@
-Nurse database where you can add and edit nurses. Implemented with SQL server on localhost:1768, and with the frontend on localhost:3000
+Nurse database that mirrors an SQL table where you can add and edit nurses, as well as download a CSV or XLSX file. SQL server is hosted on localhost:1768, frontend on localhost:3000. To run, start your SQL table, and the backend and frontend, then open http://localhost:3000 to see the table
