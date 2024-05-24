@@ -68,6 +68,16 @@ function App() {
             console.log(err);
         }
     }
+
+    // Function to submit for Edit Nurse
+    const handleSubmitDelete = async (id) => {
+        try {
+            await axios.delete(`http://localhost:1768/delete/${id}`)
+            window.location.reload();
+        } catch (err) {
+            console.log(err);
+        }
+    }
     console.log(inputData);
     
     useEffect(()=> {
@@ -141,6 +151,26 @@ function App() {
                                         )
                                     }
                                 </Popup>
+                                <Popup trigger=
+                                    {<button> Delete</button>} 
+                                    modal nested>
+                                    {
+                                        close => (
+                                            <div className='modal'>
+                                                <div className='content'>
+                                                    <h4>Delete Nurse</h4>
+                                                </div>
+                                                <div>
+                                                        <button onClick=
+                                                            {() => close()}>
+                                                                Cancel
+                                                        </button>
+                                                        <input type="submit" value="Delete" onClick={()=>handleSubmitDelete(d.ID)}></input>
+                                                    </div>
+                                            </div>
+                                        )
+                                    }
+                                </Popup>
                             </tr>
                         ))
                     }
@@ -156,7 +186,7 @@ function App() {
                                     <div className='content'>
                                         <h4>Add Nurse</h4>
                                     </div>
-                                    <form onSubmit= {handleSubmitAdd }>
+                                    <form onSubmit= { handleSubmitAdd }>
                                         <div className='AddBox'>
                                             Name: <input type="text" required name="Name" onChange={(e)=>{ setInputData({...inputData, Name: e.target.value})}}/>
                                             <br></br><br></br>

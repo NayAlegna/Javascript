@@ -61,6 +61,16 @@ app.put("/edit/:id", (req,res)=> {
     
 })
 
+app.delete("/delete/:id", (req,res)=>{
+    const nurseId = req.params.id;
+    const sql = "DELETE FROM Nurses.Nurses WHERE id = ?";
+
+    db.query(sql, [nurseId], (err, data)=> {
+        if (err) return res.json(err);
+        return res.json("Nurse deleted successfully!")
+    })
+})
+
 app.listen(1768, ()=>{
     console.log("Connected to backend!")
 })
